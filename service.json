@@ -1,0 +1,119 @@
+{
+  "id": "md-libretranslate",
+  "adapter": "libretranslate",
+  "name": "LibreTranslate",
+  "description": "Machine translation and language detection using a self-hosted LibreTranslate instance",
+  "category": "linguistic",
+  "source_url": "https://github.com/LibreTranslate/LibreTranslate",
+
+  "local_url": "http://localhost:5000",
+
+  "supported_types": ["text"],
+  "supported_formats": ["txt", "html"],
+
+  "tasks": {
+    "translate": {
+      "name": "Translate text",
+      "description": "Translate plain text into another language, with automatic source-language detection",
+      "behaviour": "one-to-one",
+      "params": {
+        "source": "auto",
+        "target": "en"
+      },
+      "params_help": {
+        "source": {
+          "name": "Source language",
+          "help": "Language of the input text. Leave as 'Detect automatically' unless detection is unreliable for your text.",
+          "display": "dropdown",
+          "default": "auto",
+          "values": {
+            "auto": "Detect automatically",
+            "sq": "Albanian", "ar": "Arabic", "az": "Azerbaijani", "eu": "Basque", "bn": "Bengali",
+            "bg": "Bulgarian", "ca": "Catalan", "zh": "Chinese", "cs": "Czech", "da": "Danish",
+            "nl": "Dutch", "en": "English", "eo": "Esperanto", "et": "Estonian", "fi": "Finnish",
+            "fr": "French", "gl": "Galician", "de": "German", "el": "Greek", "he": "Hebrew",
+            "hi": "Hindi", "hu": "Hungarian", "id": "Indonesian", "ga": "Irish", "it": "Italian",
+            "ja": "Japanese", "ko": "Korean", "lv": "Latvian", "lt": "Lithuanian", "ms": "Malay",
+            "nb": "Norwegian", "fa": "Persian", "pl": "Polish", "pt": "Portuguese", "ro": "Romanian",
+            "ru": "Russian", "sk": "Slovak", "sl": "Slovenian", "es": "Spanish", "sv": "Swedish",
+            "tl": "Tagalog", "th": "Thai", "tr": "Turkish", "uk": "Ukrainian", "ur": "Urdu",
+            "vi": "Vietnamese"
+          }
+        },
+        "target": {
+          "name": "Target language",
+          "help": "Language to translate the text into",
+          "display": "dropdown",
+          "default": "en",
+          "values": {
+            "sq": "Albanian", "ar": "Arabic", "az": "Azerbaijani", "eu": "Basque", "bn": "Bengali",
+            "bg": "Bulgarian", "ca": "Catalan", "zh": "Chinese", "cs": "Czech", "da": "Danish",
+            "nl": "Dutch", "en": "English", "eo": "Esperanto", "et": "Estonian", "fi": "Finnish",
+            "fr": "French", "gl": "Galician", "de": "German", "el": "Greek", "he": "Hebrew",
+            "hi": "Hindi", "hu": "Hungarian", "id": "Indonesian", "ga": "Irish", "it": "Italian",
+            "ja": "Japanese", "ko": "Korean", "lv": "Latvian", "lt": "Lithuanian", "ms": "Malay",
+            "nb": "Norwegian", "fa": "Persian", "pl": "Polish", "pt": "Portuguese", "ro": "Romanian",
+            "ru": "Russian", "sk": "Slovak", "sl": "Slovenian", "es": "Spanish", "sv": "Swedish",
+            "tl": "Tagalog", "th": "Thai", "tr": "Turkish", "uk": "Ukrainian", "ur": "Urdu",
+            "vi": "Vietnamese"
+          }
+        }
+      }
+    },
+    "translate_html": {
+      "name": "Translate HTML/markup",
+      "description": "Translate HTML content while preserving tags and attributes",
+      "behaviour": "one-to-one",
+      "params": {
+        "source": "auto",
+        "target": "en"
+      },
+      "params_help": {
+        "source": {
+          "name": "Source language",
+          "help": "Language of the input HTML. Leave as 'Detect automatically' unless detection is unreliable for your text.",
+          "display": "dropdown",
+          "default": "auto",
+          "values": {
+            "auto": "Detect automatically",
+            "sq": "Albanian", "ar": "Arabic", "az": "Azerbaijani", "eu": "Basque", "bn": "Bengali",
+            "bg": "Bulgarian", "ca": "Catalan", "zh": "Chinese", "cs": "Czech", "da": "Danish",
+            "nl": "Dutch", "en": "English", "eo": "Esperanto", "et": "Estonian", "fi": "Finnish",
+            "fr": "French", "gl": "Galician", "de": "German", "el": "Greek", "he": "Hebrew",
+            "hi": "Hindi", "hu": "Hungarian", "id": "Indonesian", "ga": "Irish", "it": "Italian",
+            "ja": "Japanese", "ko": "Korean", "lv": "Latvian", "lt": "Lithuanian", "ms": "Malay",
+            "nb": "Norwegian", "fa": "Persian", "pl": "Polish", "pt": "Portuguese", "ro": "Romanian",
+            "ru": "Russian", "sk": "Slovak", "sl": "Slovenian", "es": "Spanish", "sv": "Swedish",
+            "tl": "Tagalog", "th": "Thai", "tr": "Turkish", "uk": "Ukrainian", "ur": "Urdu",
+            "vi": "Vietnamese"
+          }
+        },
+        "target": {
+          "name": "Target language",
+          "help": "Language to translate the HTML into",
+          "display": "dropdown",
+          "default": "en",
+          "values": {
+            "sq": "Albanian", "ar": "Arabic", "az": "Azerbaijani", "eu": "Basque", "bn": "Bengali",
+            "bg": "Bulgarian", "ca": "Catalan", "zh": "Chinese", "cs": "Czech", "da": "Danish",
+            "nl": "Dutch", "en": "English", "eo": "Esperanto", "et": "Estonian", "fi": "Finnish",
+            "fr": "French", "gl": "Galician", "de": "German", "el": "Greek", "he": "Hebrew",
+            "hi": "Hindi", "hu": "Hungarian", "id": "Indonesian", "ga": "Irish", "it": "Italian",
+            "ja": "Japanese", "ko": "Korean", "lv": "Latvian", "lt": "Lithuanian", "ms": "Malay",
+            "nb": "Norwegian", "fa": "Persian", "pl": "Polish", "pt": "Portuguese", "ro": "Romanian",
+            "ru": "Russian", "sk": "Slovak", "sl": "Slovenian", "es": "Spanish", "sv": "Swedish",
+            "tl": "Tagalog", "th": "Thai", "tr": "Turkish", "uk": "Ukrainian", "ur": "Urdu",
+            "vi": "Vietnamese"
+          }
+        }
+      }
+    },
+    "detect_language": {
+      "name": "Detect language",
+      "description": "Detect the language of the input text, with a confidence score",
+      "behaviour": "one-to-one",
+      "params": {},
+      "params_help": {}
+    }
+  }
+}
